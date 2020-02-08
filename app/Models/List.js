@@ -61,7 +61,7 @@ export default class List {
 
       <div class="row justify-content-around">
         <h1 class="col-7" id="idListTitle">${this.listName}</h1>
-        <img class="img-fluid col-3" src="./deleteimg.png" alt="" onclick="">
+        <img class="img-fluid col-3" src="./deleteimg.png" alt="" onclick="app.listController.delList('${this.id}')">
         <div class="col-12">
           <form onsubmit="app.listController.addItem(event, '${this.id}')">
             <div class="form-group">

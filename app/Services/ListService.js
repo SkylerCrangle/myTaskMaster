@@ -24,6 +24,11 @@ class ListService {
     console.log(_store.State.lists)
   }
 
+  delList(id) {
+    let allLists = _store.State.lists.filter(list => list.id !== id)
+    _store.State.lists = allLists
+  }
+
 
 
   //TODO  Here is where we handle all of our business logic,
