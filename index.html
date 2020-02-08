@@ -14,19 +14,53 @@
   <main class="container-fluid">
     <header class="row bg-secondary">
       <div class="col-8 bg-secondary" id="makeYourList">
-        <div class="form-group">
-          <label for="nameYourList">Create your next To-do List:</label>
-          <input type="text" name="nameYourList" id="" class="form-control" placeholder="Name your list">
-        </div>
+
+        <!-- <form class="form-inline" onsubmit="app.listController.createList(event)">
+          <div class="form-group mb-2">
+            <label for="staticEmail2" class="sr-only">Email</label>
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2" class="sr-only">Password</label>
+            <input type="test" class="form-control" id="inputPassword2" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+        </form> -->
+
+        <form onsubmit="app.listController.createList(event)">
+          <div class="form-group">
+            <label for="nameYourList">Create your next To-do List:</label>
+            <input type="text" name="nameYourList" class="form-control" placeholder="Name your list">
+          </div>
+          <button class="m-2 col-3 btn btn-primary" type="submit">Create</button>
+        </form>
       </div>
-      <button class="m-2 col-3 btn btn-primary">Create</button>
     </header>
-    <div class="row">
-      <div class="col-5 bg-success p-2 m-4">
-        <div class="row">
-          <div class="col-12">List Title</div>
-        </div>
 
+
+    <div id="listRow">
+      <!-- this is a list -->
+      <div class="row">
+
+        <div class="col-5 bg-success p-2 m-4">
+
+          <div class="row justify-content-around">
+            <h1 class="col-7" id="idListTitle">List Title</h1>
+            <img class="img-fluid col-3" src="./deleteimg.png" alt="" onclick="">
+            <div class="col-12">
+              <form onsubmit="">
+                <div class="form-group">
+                  <label for="nameYourItem">Create your next To-do Item:</label>
+                  <input type="text" name="nameYourItem" class="form-control" placeholder="Name your list">
+                </div>
+                <button class="m-2 col-3 btn btn-primary" type="submit">Create</button>
+              </form>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- end -->
 
         <div class="row justify-content-around">
           <div class="col-2">
@@ -37,28 +71,13 @@
             </div>
 
           </div>
-          <div class="col-7"> List Item</div>
-          <div class="col-2">
-            <img class="img-fluid p-1" src="./deleteimg.png" alt="">
-          </div>
-        </div>
-
-        <div class="row justify-content-around">
-          <div class="col-2">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-              </label>
-            </div>
-          </div>
-          <div class="col-7"> List Item</div>
+          <div class="col-7" id="idListItem"> List Item</div>
           <div class="col-2">
             <img class="img-fluid p-1" src="./deleteimg.png" alt="">
           </div>
         </div>
 
       </div>
-      <div class="col-5 bg-success p-2 m-4">List will go here</div>
     </div>
 
   </main>

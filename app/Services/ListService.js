@@ -1,7 +1,31 @@
 import List from "../Models/List.js";
+import _store from "../store.js";
+
+//let testList = new List();
 
 //Public
 class ListService {
+  constructor() {
+    console.log("list service")
+  }
+
+  createList(object) {
+    let newList = new List(object)
+    _store.State.lists.push(newList)
+    console.log(_store.State.lists)
+
+  }
+
+  addItem(event, idList) {
+    let newItem = event.target.nameYourItem.value
+    console.log(newItem)
+    let addItem = _store.State.lists.find(list => list.id === idList)
+    addItem.items.push(newItem)
+    console.log(_store.State.lists)
+  }
+
+
+
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
   //what methods will you need to do when this class is first 'constructed'?
