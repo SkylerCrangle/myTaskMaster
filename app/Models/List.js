@@ -43,7 +43,7 @@ export default class List {
       <div class="col-7" id="idListItem"> ${item}</div>
 
       <div class="col-2">
-        <img class="img-fluid p-1" src="./deleteimg.png" alt="" onclick="">
+        <img class="img-fluid p-1" src="./deleteimg.png" alt="" onclick="app.listController.delItem('${this.id}','${item}')">
       </div>
 
     </div>
@@ -66,7 +66,7 @@ export default class List {
           <form onsubmit="app.listController.addItem(event, '${this.id}')">
             <div class="form-group">
               <label for="nameYourItem">Create your next To-do Item:</label>
-              <input type="text" name="nameYourItem" class="form-control" placeholder="Name your list">
+              <input type="text" name="nameYourItem" class="form-control" placeholder="what needs done">
             </div>
             <button class="m-2 col-3 btn btn-primary" type="submit">Create</button>
           </form>

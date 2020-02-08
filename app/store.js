@@ -16,6 +16,7 @@ function _loadState() {
   }
 }
 _loadState();
+console.log(_state)
 
 class Store {
   /**
@@ -30,6 +31,7 @@ class Store {
     localStorage.setItem("TaskMaster", JSON.stringify(_state));
   }
 }
+
 
 const store = new Store();
 export default store;

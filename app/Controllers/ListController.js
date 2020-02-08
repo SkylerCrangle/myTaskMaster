@@ -49,4 +49,9 @@ export default class ListController {
     ListService.delList(id)
     _drawLists()
   }
+
+  delItem(listId, itemId) {
+    ListService.delItem(listId, itemId)
+    _drawLists()
+  }
 }
