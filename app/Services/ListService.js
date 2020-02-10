@@ -1,5 +1,6 @@
 import List from "../Models/List.js";
 import _store from "../store.js";
+//import swal from 'sweetalert';
 
 //let testList = new List();
 
@@ -35,8 +36,27 @@ class ListService {
   delItem(listId, itemId) {
     let onHere = _store.State.lists.find(list => list.id == listId)
     let delThis = onHere.items.findIndex(item => item == itemId)
+
+    //confirmDeleteItem()
+
     onHere.items.splice(delThis, 1)
     _store.saveState()
+  }
+
+
+  confirmDeleteItem() {
+    swal({
+      title: "Are you sure?",
+      text: "Your will not be able to recover this imaginary file!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonClass: "btn-danger",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: false
+    },
+      function () {
+        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+      });
   }
 
   //TODO  Here is where we handle all of our business logic,

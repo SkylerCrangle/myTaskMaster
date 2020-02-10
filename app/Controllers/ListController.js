@@ -31,7 +31,7 @@ export default class ListController {
     //let text = formData.input.value
     console.log(listName)
     let newList = {
-      listNameModel: listName
+      listName: listName
     }
     ListService.createList(newList)
     _drawLists()
