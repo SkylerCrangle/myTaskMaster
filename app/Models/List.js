@@ -30,7 +30,7 @@ export default class List {
 
   get ListItems() {
     let template = ""
-    this.items.forEach(item => {
+    this.items.forEach((item, index) => {
       // template += item.Template
       template += `<div class="row justify-content-around">
 
@@ -45,7 +45,7 @@ export default class List {
       <div class="col-7" id="idListItem"> ${item}</div>
 
       <div class="col-2">
-        <img class="img-fluid p-1" src="./deleteimg.png" alt="" onclick="app.listController.delItem('${this.id}','${item}')">
+        <img class="img-fluid p-1" src="./deleteimg.png" alt="" onclick="app.listController.delItem('${this.id}',${index})">
       </div>
 
     </div>
@@ -57,7 +57,7 @@ export default class List {
 
   get Template() {
     return /*html*/`
-    <div class="row">
+    
 
     <div class="col-5 bg-success p-2 m-4">
 
@@ -77,7 +77,7 @@ export default class List {
       <div>${this.ListItems}</div>
       </div>
       
-      </div>
+    
 
 
 `

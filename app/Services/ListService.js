@@ -1,4 +1,5 @@
 import List from "../Models/List.js";
+//import Items from "../Models/Items.js"
 import _store from "../store.js";
 //import swal from 'sweetalert';
 
@@ -22,6 +23,7 @@ class ListService {
 
   addItem(event, idList) {
     let newItem = event.target.nameYourItem.value
+    //for items own class: newItem = new Items(event)
     console.log(newItem)
     let addItem = _store.State.lists.find(list => list.id === idList)
     addItem.items.push(newItem)
@@ -38,9 +40,9 @@ class ListService {
   //NOTE this is actually itemName not itemId - I just kept my variable name inacurate - oh well
   delItem(listId, itemId) {
     let onHere = _store.State.lists.find(list => list.id == listId)
-    let delThis = onHere.items.findIndex(item => item == itemId)
+    //let delThis = onHere.items.findIndex(item => item == itemId)
 
-    onHere.items.splice(delThis, 1)
+    onHere.items.splice(itemId, 1)
     _store.saveState()
 
   }
