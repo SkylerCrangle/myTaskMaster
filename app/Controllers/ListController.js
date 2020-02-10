@@ -46,12 +46,18 @@ export default class ListController {
   }
 
   delList(id) {
-    ListService.delList(id)
-    _drawLists()
+    let actuallyDel = window.confirm()
+    if (actuallyDel) {
+      ListService.delList(id)
+      _drawLists()
+    }
   }
 
   delItem(listId, itemId) {
-    ListService.delItem(listId, itemId)
-    _drawLists()
+    let actuallyDel = window.confirm()
+    if (actuallyDel) {
+      ListService.delItem(listId, itemId)
+      _drawLists()
+    }
   }
 }

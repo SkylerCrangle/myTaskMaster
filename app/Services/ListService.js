@@ -4,6 +4,8 @@ import _store from "../store.js";
 
 //let testList = new List();
 
+
+
 //Public
 class ListService {
   constructor() {
@@ -33,31 +35,36 @@ class ListService {
     _store.saveState()
   }
 
+  //NOTE this is actually itemName not itemId - I just kept my variable name inacurate - oh well
   delItem(listId, itemId) {
     let onHere = _store.State.lists.find(list => list.id == listId)
     let delThis = onHere.items.findIndex(item => item == itemId)
 
-    //confirmDeleteItem()
-
     onHere.items.splice(delThis, 1)
     _store.saveState()
+
   }
 
 
-  confirmDeleteItem() {
-    swal({
-      title: "Are you sure?",
-      text: "Your will not be able to recover this imaginary file!",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonClass: "btn-danger",
-      confirmButtonText: "Yes, delete it!",
-      closeOnConfirm: false
-    },
-      function () {
-        swal("Deleted!", "Your imaginary file has been deleted.", "success");
-      });
-  }
+  // confirmDelete() {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     text: "You won't be able to revert this!",
+  //     icon: 'warning',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085d6',
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonText: 'Yes, delete it!'
+  //   }).then((result) => {
+  //     if (result.value) {
+  //       Swal.fire(
+  //         'Deleted!',
+  //         'Your file has been deleted.',
+  //         'success'
+  //       )
+  //     }
+  //   })
+  // }
 
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
